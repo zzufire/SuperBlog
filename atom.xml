@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://go.kieran.top/"/>
-  <updated>2016-05-08T11:13:37.000Z</updated>
+  <updated>2016-05-18T04:27:22.000Z</updated>
   <id>http://go.kieran.top/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一张 CD 的动画</title>
+    <link href="http://go.kieran.top/post/37/"/>
+    <id>http://go.kieran.top/post/37/</id>
+    <published>2016-05-10T08:01:05.000Z</published>
+    <updated>2016-05-18T04:27:22.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://kieran-hexo.qiniudn.com/hexo_37.gif&quot; alt=&quot;晴天CD&quot;&gt;&lt;br&gt;两个 Div 实现的动画&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;cd&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;music&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;为什么要写这个呢？&lt;br&gt;答案是 玩&lt;br&gt;没错 就是玩…&lt;br&gt;可能脑抽吧&lt;br&gt;其实我发现 CSS 动画真的很好玩！&lt;br&gt;可以实现一些炫酷的效果&lt;br&gt;接下来我会继续写几个好玩的 Demo&lt;br&gt;补充下我并不充实的 CSS3 动画知识…&lt;br&gt;玩并快乐的学习~&lt;br&gt;代码请戳下面&lt;br&gt;&lt;a href=&quot;http://codepen.io/_kieran/pen/QNRmep&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://codepen.io/_kieran/pen/QNRmep&lt;/a&gt;&lt;br&gt;原理很简单&lt;br&gt;CD 只要用到了 box-shadow 来实现光盘面 文字分别用 before after 伪类&lt;br&gt;两个音符也是一个 div 上的伪类&lt;br&gt;CD 加上无限旋转的动画&lt;br&gt;音符加上 translate rotate 实现慢慢摇摆上升&lt;br&gt;再用透明度实现渐隐渐现就 OK 了  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://kieran-hexo.qiniudn.com/hexo_37.gif&quot; alt=&quot;晴天CD&quot;&gt;&lt;br&gt;两个 Div 实现的动画&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+    
+    </summary>
+    
+    
+      <category term="CSS3" scheme="http://go.kieran.top/tags/CSS3/"/>
+    
+  </entry>
   
   <entry>
     <title>Mongoose 学习笔记</title>
@@ -659,36 +681,6 @@
       <category term="JavaScript" scheme="http://go.kieran.top/tags/JavaScript/"/>
     
       <category term="浏览器" scheme="http://go.kieran.top/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML5 + JavaScript 读取本地文件</title>
-    <link href="http://go.kieran.top/post/16/"/>
-    <id>http://go.kieran.top/post/16/</id>
-    <published>2015-04-20T05:57:16.000Z</published>
-    <updated>2015-05-31T08:13:10.000Z</updated>
-    
-    <content type="html">&lt;p&gt;###What is FileReader ?&lt;br&gt;记录一下HTML5+JS读取本地文件的操作&lt;br&gt;用到的是FileReader类&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;FileReader对象:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;采用事件机制，以下是一些可以注册的事件：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;onabort：中断时触发，可以停止读取文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;onerror：出错时触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;onload：文件成功读取完毕时触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;onloadend：文件读取完毕时触发，无论是否失败&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;onloadstart：文件开始读取时触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;onprogress：当文件读取时，周期性地触发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;他有&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;个读取函数：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;readAsArrayBuffer(file)：将文件读取为&lt;span class=&quot;built_in&quot;&gt;ArrayBuffer&lt;/span&gt;。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;readAsBinaryString(file)：将文件读取为二进制字符串&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;readAsDataURL(file)：将文件读取为Data URL&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;readAsText(file, [encoding])：将文件读取为文本，encoding缺省值为’UTF&lt;span class=&quot;number&quot;&gt;-8&lt;/span&gt;′&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;###Demo : choose txt file or image file&lt;/p&gt;
-&lt;p&gt;&lt;input id=&quot;file&quot; type=&quot;file&quot; multiple onchange=&quot;read_files(this.files)&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;inputDemo&quot; style=&quot;min-height:70px;background-color:#eee;padding:5px 10px;&quot;&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;script src=&quot;/post_demo/16.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;###Code&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;input id=&lt;span class=&quot;string&quot;&gt;&quot;file&quot;&lt;/span&gt; type=&lt;span class=&quot;string&quot;&gt;&quot;file&quot;&lt;/span&gt; multiple=&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt; onchange=&lt;span class=&quot;string&quot;&gt;&quot;read_files(this.files)&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;inputDemo&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;min-height:70px;background-color:#eee;padding:5px;&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;read_files&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;fileArray&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; fileArray)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; file = fileArray[i]; &lt;span class=&quot;comment&quot;&gt;//这个file对象有以下属性可供读取name、size、lastModifiedDate和type等。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reader = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; FileReader();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;regexp&quot;&gt;/text\/\w+/&lt;/span&gt;.test(file.type)) &amp;#123; &lt;span class=&quot;comment&quot;&gt;//判断文本文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			reader.onload = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;//成功读取完毕后触发onload事件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;inputDemo&#39;&lt;/span&gt;).innerHTML=&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.result;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			reader.readAsText(file);&lt;span class=&quot;comment&quot;&gt;//readAsText函数用于将文件读取为文本&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;regexp&quot;&gt;/image\/\w+/&lt;/span&gt;.test(file.type)) &amp;#123; &lt;span class=&quot;comment&quot;&gt;//判断图片文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			reader.onload = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;inputDemo&#39;&lt;/span&gt;).innerHTML=&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;img src=&#39;&lt;/span&gt;+&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.result+&lt;span class=&quot;string&quot;&gt;&#39;&amp;gt;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			reader.readAsDataURL(file);&lt;span class=&quot;comment&quot;&gt;//readAsDataUrl函数用于将文件读取为Data url&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      Kieran
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://go.kieran.top/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://go.kieran.top/tags/JavaScript/"/>
-    
-      <category term="HTML5" scheme="http://go.kieran.top/tags/HTML5/"/>
     
   </entry>
   
