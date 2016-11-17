@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>树莓派教程——LED灯 | KIERAN&#39;S BLOG</title>
+  <title>Tag: 战争 | KIERAN&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -82,7 +82,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -226,87 +226,69 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2015-09-22T17:43:37.000Z" itemprop="datePublished">
-          2015-09-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/Raspberrypi/'>Raspberrypi</a>
-    
-    
-</span>
-                <h1>树莓派教程——LED灯</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/1.jpeg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2></h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p></p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<p><img src="http://kieran-hexo.qiniudn.com/hexo_24_1.png" alt="树莓派B+引脚图">  </p>
-<p>###首先<br>我们来看一下引脚图<br>我的树莓派型号是B+，所以有40个针脚，如果你的只有26个针脚，没关系，图中的前26个针脚和你的功能是一样的<br>通过引脚图，可以知道这些GPIO口中，有一些引脚有固定的用法，比如有电压输出引脚，包括3.3V和5V，也有GND引脚，也就是通常说的地，还有一些引脚具有SPI功能，更多的引脚是general属性，也就是我们可以根据自己的用途定义引脚</p>
-<p>###第一次点亮LED灯<br>好，我们先只通过硬件实现点亮LED灯，不带程序<br>那利用哪些引脚呢？没错！就是3.3V的输出和GND引脚。把LED灯的两个引脚分别接3.3V和GND（正负极性勿接反），然后给树莓派上电！<br>效果就是下图<br><img src="http://kieran-hexo.qiniudn.com/hexo_24_2.jpg" alt="树莓派点亮LED图"></p>
-<p>###带呼吸灯效果的跑马灯<br>先看个演示视频吧</p>
-<p><video src="http://kieran-hexo.qiniudn.com/hexo_24.mp4" width="100%" controls="controls" loop="loop">Your browser does not support the video tag.</video><br>是否有点意思？<br>看视频差不多看到了引脚的接线方法，我这里再讲下吧<br>四个LED灯正极分别接 7,11,13,15 针脚，负极都接GND<br>其实很简单<br>然后直接看程序吧<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> RPi.GPIO <span class="keyword">as</span> GPIO</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"> </span><br><span class="line">GPIO.setmode(GPIO.BOARD)</span><br><span class="line"> </span><br><span class="line">channels = [<span class="number">7</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">15</span>] </span><br><span class="line">p = [<span class="number">0</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">4</span>)]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> channels:</span><br><span class="line">  GPIO.setup(ch, GPIO.OUT)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">  p[i] = GPIO.PWM(channels[i], <span class="number">50</span>) <span class="comment">#频率设为50Hz</span></span><br><span class="line">  p[i].start(<span class="number">0</span>) <span class="comment">#0是占空比</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">      <span class="keyword">for</span> dc <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">101</span>, <span class="number">1</span>):</span><br><span class="line">        p[ch].ChangeDutyCycle(dc) <span class="comment">#更改占空比</span></span><br><span class="line">        time.sleep(<span class="number">0.005</span>)</span><br><span class="line">      <span class="keyword">for</span> dc <span class="keyword">in</span> range(<span class="number">100</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">        p[ch].ChangeDutyCycle(dc)</span><br><span class="line">        time.sleep(<span class="number">0.005</span>)</span><br><span class="line">  <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">    gpio.cleanup()</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"All Cleanup!"</span></span><br></pre></td></tr></table></figure></p>
-<p>关键代码都有注释，我就不浪费口舌了。玩的愉快！</p>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/post/25/" style="float: left;">
-        ← 树莓派教程——DHT22温湿度传感器AM2302
-    </a>
-    
-    
-    <a class="pull-right" href="/post/23/">
-        树莓派初体验——配置篇 →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo">
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-	var disqus_shortname = 'superkieran';
-	window.addEventListener('load', function(){
-		(function(){
-			var dsq = document.createElement('script');
-			dsq.type = 'text/javascript';
-			dsq.async = true;
-			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		}());
-	});
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-
-
-<div class="ds-thread" data-thread-key="post/24/" data-title="树莓派教程——LED灯" data-url="http://go.kieran.top/post/24/"></div>
-<script type="text/javascript">
-	var duoshuoQuery = {short_name:"kieran"};
-	window.addEventListener('load', function(){
-		(function() {
-			var ds = document.createElement('script');
-			ds.type = 'text/javascript';ds.async = true;
-			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-			ds.charset = 'UTF-8';
-			(document.getElementsByTagName('head')[0]
-			|| document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-	});
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/post/38/">怪诞人生</a></h4>
+                            
+                            <p><time datetime="2016-11-14T16:48:08.000Z"><a href="/post/38/">2016-11-15</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
