@@ -3320,6 +3320,7 @@ footer .footer_bottom {
 }
 #intro .col-md-8.col-md-offset-2 img {
 	max-width: 100%;
+	vertical-align: baseline;
 }
 #intro .col-md-8.col-md-offset-2 p a {
   color: #0275d8;

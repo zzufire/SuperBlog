@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: Node.js | KIERAN&#39;S BLOG</title>
+  <title>都是 Edge(IE) 缓存惹的祸 | KIERAN&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -61,7 +61,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -205,87 +205,77 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/1.jpeg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/post/34/">网站速度优化（一）——Express中间件摆放顺序之坑</a></h4>
-                            
-                            <p><time datetime="2016-03-15T16:23:07.000Z"><a href="/post/34/">2016-03-16</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/post/19/">慕课网视频下载小程序</a></h4>
-                            
-                            <p><time datetime="2015-05-29T04:49:41.000Z"><a href="/post/19/">2015-05-29</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/post/11/">Node.js初体验——从一个简单的爬虫开始</a></h4>
-                            
-                            <p><time datetime="2015-01-28T18:19:30.000Z"><a href="/post/11/">2015-01-29</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-01-15T14:58:19.000Z" itemprop="datePublished">
+          2017-01-15
+      </time>
+    
+</span>
+                <h1>都是 Edge(IE) 缓存惹的祸</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p>上周某天上班的时候，突然后端同志私戳我，<br><img src="http://kieran-hexo.qiniudn.com/hexo_40_1.png" width="350px"><br>当时我正研究着另一个项目的PSD，内心认真规划着整个项目的代码结构，指尖流淌出迷人的键盘音……<br>好吧，其实内心想着中午吃什么菜，喝什么汤<img src="http://kieran-hexo.qiniudn.com/hexo_40_2.gif" width="30px"><br>仔细一看，第一反应是，<img src="http://kieran-hexo.qiniudn.com/hexo_bq_22.jpeg" width="50px">怎么可能。于是爸爸我连忙打开虚拟机中滴 Win10，等待 Win10 爷爷慢悠悠的进入待机状态。迅速点开 Edge 。<br>打开网页和 network 控制台，迅速进入调试状态。<br>一点退出登录，“啪”一个退出请求出现在 network 里，账号也随之退出。这…不是很正常嘛？？？<img src="http://kieran-hexo.qiniudn.com/hexo_bq_21.jpeg" width="50px"> 哦，是第二次，于是爸爸再次登录，点击退出。嗯？点击退出。嗯？点击退出。嗯？？？<img src="http://kieran-hexo.qiniudn.com/hexo_bq_18.jpeg" width="30px"><br>为什么页面只是刷新了一下而没有退出？？？<br>看看 network ，空空如也。<br>同样的操作在 Chrome 下，正常  </p>
+<p><b>当时我的反应是——我可能打开的是假 Edge <img src="http://kieran-hexo.qiniudn.com/hexo_40_3.jpeg" width="150px"></b>  </p>
+<p>根据之前的表现（就是点完页面刷新了一下），我一开始假设 Edge 下 a 标签 href 里写 javascript:; 不起作用，还是会跳转，于是绑定的事件也没用了。但是一看代码，好像不对。来，看代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$('.J_exit').on('click', function () &#123;</span><br><span class="line">    $.get('/ajax/exit.do, function () &#123;</span><br><span class="line">        location.reload();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>点击退出按钮的时候请求退出接口，后端会删除对应的 session，然后前端刷新下也没，cookie 没有对应的 session 于是会跳到登录页，从逻辑上来说，没毛病。<br>所以排除我刚刚的假设，<b>那会不会是缓存问题呢？</b>刚想到这里……<br>就看到两个人气势汹汹的往我这来，是后端GG和测试MM，两人过来把我团团围住，“Hey，boy，Edge 的 Bug 改的怎么样了？”<br>我当时的表情是这样的，<img src="http://kieran-hexo.qiniudn.com/hexo_bq_16.gif" width="50px"> 这好像才过去三分钟，你两怎么就过来了？？？<img src="http://kieran-hexo.qiniudn.com/hexo_bq_21.jpeg" width="50px"> 爸爸才刚打开虚拟机！<br>咦，不对，重点是，为啥你两亲自跑过来了？<img src="http://kieran-hexo.qiniudn.com/hexo_bq_3.jpeg" width="50px"> 宝宝很惶恐啊，有事私戳我就行了，没必要兴师动众的。由于我还没验证出 bug 原因，都是猜测，于是保守的说还母鸡呀。然后说了一堆有的没的，就走了，走了，了 <img src="http://kieran-hexo.qiniudn.com/hexo_bq_22.jpeg" width="50px"> 哦，后台GG走之前意味深长的跟我说了句，可能是浏览器缓存问题。嘴角带着邪魅的笑，大概是这种 <img src="http://kieran-hexo.qiniudn.com/hexo_bq_13.gif" width="50px">。<br><img src="http://kieran-hexo.qiniudn.com/hexo_bq_22.jpeg" width="50px"><img src="http://kieran-hexo.qiniudn.com/hexo_bq_22.jpeg" width="50px"><img src="http://kieran-hexo.qiniudn.com/hexo_bq_22.jpeg" width="50px">爸爸刚想测。于是爸爸在请求后面加了时间戳参数，第二次请求成功的发出去了。但是还是得向后台GG表示“感谢” <img src="http://kieran-hexo.qiniudn.com/hexo_bq_9.jpeg" width="50px"><br>事后搜了下，发现 <b>IE 浏览器对于没有明确表明是否缓存（强制缓存或者强制不缓存），默认的设置是“自动 automatically”，即在不关闭浏览器的情况下（同一个会话），刷新页面，对于相同url的请求并不会再次发送（即请求被缓存了）</b>，而 Edge 延续了 IE 这种“优良”的传统，坚决和主流浏览器保持“差异性”，所以会出现上面第二次请求退出接口的时候，请求都没有发出，直接就执行 location.reload() 了。  </p>
+<p><b>最后只想 po 一张图，自己体会</b><br><img src="http://kieran-hexo.qiniudn.com/hexo_40_0.jpeg" width="350px"></p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/post/39/">
+        挑食，不挑食 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'superkieran';
+	window.addEventListener('load', function(){
+		(function(){
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}());
+	});
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+<div class="ds-thread" data-thread-key="post/40/" data-title="都是 Edge(IE) 缓存惹的祸" data-url="http://go.kieran.top/post/40/"></div>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"kieran"};
+	window.addEventListener('load', function(){
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0]
+			|| document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	});
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
